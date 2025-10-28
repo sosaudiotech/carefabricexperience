@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PopulationHealthManagement">
+    <g id="careConnectInbox">
+      <rect x="4.64" y="36.02" width="87.84" height="48.97" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.91"/>
+      <polyline points="92.47 36.02 48.55 63.66 4.64 36.02" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.91"/>
+      <path d="M80.01,34.85v-8.77c.01-3.16,2.57-5.72,5.73-5.73h0c3.17,0,5.74,2.56,5.75,5.73v8.77h7.35v-8.58c-.02-7.22-5.87-13.07-13.09-13.09h0c-7.22.02-13.07,5.87-13.08,13.09v8.58h7.34Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.91"/>
+      <rect x="66.86" y="31.19" width="37.78" height="30.11" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.91"/>
+    </g>
+  </g>
+</svg>

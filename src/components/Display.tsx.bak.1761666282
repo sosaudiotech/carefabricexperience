@@ -1,0 +1,173 @@
+import React, { useEffect, useState } from 'react';
+import { io, Socket } from 'socket.io-client';
+import './Display.css';
+
+interface DisplayState {
+    buttonId: string | null;
+    subcategoryId: string | null;
+    timestamp: number | null;
+}
+
+// Content mapping for different products
+const PRODUCT_CONTENT: Record<string, {
+    title: string;
+    description: string;
+    color: string;
+}> = {
+    // CareRecord - Enterprise
+    'CareView': {
+        title: 'CareView',
+        description: 'Comprehensive patient care management and visualization platform',
+        color: '#2563eb'
+    },
+    'CareNet': {
+        title: 'CareNet',
+        description: 'Enterprise healthcare network integration solution',
+        color: '#7c3aed'
+    },
+    
+    // CareRecord - SpecialtyServices
+    'CareConnect': {
+        title: 'CareConnect',
+        description: 'Specialty care coordination and referral management',
+        color: '#059669'
+    },
+    'CarePath': {
+        title: 'CarePath',
+        description: 'Specialized care pathway management',
+        color: '#0891b2'
+    },
+    
+    // CareAdministration - Technology
+    'AdminPortal': {
+        title: 'Admin Portal',
+        description: 'Central administration and configuration interface',
+        color: '#dc2626'
+    },
+    'TechHub': {
+        title: 'Tech Hub',
+        description: 'Technology infrastructure management platform',
+        color: '#ea580c'
+    },
+    
+    // CareAdministration - Services
+    'ServiceDesk': {
+        title: 'Service Desk',
+        description: 'Healthcare service request and support system',
+        color: '#ca8a04'
+    },
+    'OpsDashboard': {
+        title: 'Operations Dashboard',
+        description: 'Real-time operations monitoring and analytics',
+        color: '#65a30d'
+    }
+};
+
+export default function Display() {
+    const [state, setState] = useState<DisplayState>({
+        buttonId: null,
+        subcategoryId: null,
+        timestamp: null
+    });
+    const [socket, setSocket] = useState<Socket | null>(null);
+    const [connectionStatus, setConnectionStatus] = useState<'connecting' | 'connected' | 'disconnected'>('connecting');
+
+    useEffect(() => {
+        // Connect to the server
+        const serverUrl = process.env.REACT_APP_SERVER_URL || 'http://localhost:3001';
+        const newSocket = io(serverUrl);
+
+        newSocket.on('connect', () => {
+            console.log('Connected to server');
+            setConnectionStatus('connected');
+        });
+
+        newSocket.on('disconnect', () => {
+            console.log('Disconnected from server');
+            setConnectionStatus('disconnected');
+        });
+
+        newSocket.on('state-update', (newState: DisplayState) => {
+            console.log('State update received:', newState);
+            setState(newState);
+        });
+
+        setSocket(newSocket);
+
+        return () => {
+            newSocket.close();
+        };
+    }, []);
+
+    const currentProduct = state.buttonId ? PRODUCT_CONTENT[state.buttonId] : null;
+
+    return (
+        <div className="display-container">
+            {/* Connection status indicator */}
+            <div className={`connection-status ${connectionStatus}`}>
+                <div className="status-dot"></div>
+                <span>{connectionStatus}</span>
+            </div>
+
+            {/* Main content area */}
+            <div className="display-content">
+                {currentProduct ? (
+                    <div 
+                        className="product-display"
+                        style={{ borderColor: currentProduct.color }}
+                    >
+                        <div className="product-header">
+                            <div 
+                                className="product-icon"
+                                style={{ backgroundColor: currentProduct.color }}
+                            >
+                                {currentProduct.title.charAt(0)}
+                            </div>
+                            <h1 style={{ color: currentProduct.color }}>
+                                {currentProduct.title}
+                            </h1>
+                        </div>
+                        
+                        <div className="product-body">
+                            <p className="product-description">
+                                {currentProduct.description}
+                            </p>
+                            
+                            <div className="product-meta">
+                                <div className="meta-item">
+                                    <span className="meta-label">Category:</span>
+                                    <span className="meta-value">{state.subcategoryId}</span>
+                                </div>
+                                <div className="meta-item">
+                                    <span className="meta-label">Product ID:</span>
+                                    <span className="meta-value">{state.buttonId}</span>
+                                </div>
+                            </div>
+
+                            {/* Placeholder for future content */}
+                            <div className="product-features">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li>Real-time data synchronization</li>
+                                    <li>Advanced analytics and reporting</li>
+                                    <li>Seamless integration capabilities</li>
+                                    <li>Enhanced security and compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="idle-display">
+                        <div className="idle-content">
+                            <div className="idle-logo">
+                                <div className="logo-circle"></div>
+                            </div>
+                            <h2>Care Fabric Experience</h2>
+                            <p>Waiting for product selection...</p>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}

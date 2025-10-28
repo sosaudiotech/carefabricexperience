@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PopulationHealthManagement">
+    <g id="higherPath">
+      <rect x="64.59" y="76.4" width="15.1" height="13.99" fill="#fff"/>
+      <rect x="18.58" y="48.21" width="61.1" height="14.19" fill="#fff"/>
+      <rect x="64.59" y="62.41" width="15.1" height="13.99" fill="#84bd00"/>
+      <rect x="18.76" y="62.48" width="45.82" height="27.91" fill="#84bd00"/>
+      <path d="M8.92,39.74v59.07h79.67v-59.07H8.92ZM79.87,90.58H18.74v-42.35h61.13v42.35Z" fill="#fff"/>
+      <g id="higherPath-2" data-name="higherPath">
+        <g>
+          <rect x="8.97" y="20.11" width="79.67" height="19.63" fill="#00a2c5"/>
+          <path d="M89.49,40.59H8.12v-21.33h81.37v21.33ZM9.82,38.89h77.98v-17.94H9.82v17.94Z" fill="#044872"/>
+        </g>
+        <g>
+          <path d="M80.58,91.29H18.07v-44.03h62.52v44.03h0ZM19.77,89.6h59.12v-40.64H19.77v40.64Z" fill="#044872"/>
+          <rect x="33.28" y="48.11" width="1.7" height="42.33" fill="#044872"/>
+          <rect x="18.92" y="61.61" width="60.82" height="1.7" fill="#044872"/>
+          <rect x="18.92" y="75.39" width="60.82" height="1.7" fill="#044872"/>
+          <rect x="48.48" y="48.11" width="1.7" height="42.33" fill="#044872"/>
+          <rect x="63.69" y="48.11" width="1.7" height="42.33" fill="#044872"/>
+        </g>
+      </g>
+      <path d="M89.49,99.92H8.12v-60.77h81.37v60.77ZM9.82,98.23h77.98v-57.38H9.82v57.38Z" fill="#044872"/>
+      <polygon points="93.33 69.54 93.33 32.56 106.34 32.56 82.58 3.43 58.81 32.56 71.82 32.56 71.82 69.54 93.33 69.54" fill="#e87722"/>
+      <path d="M94.18,70.38h-23.2v-36.98h-13.95L82.58,2.08l25.54,31.32h-13.95v36.98ZM72.67,68.69h19.81V31.71h12.07l-21.97-26.94-21.97,26.94h12.07v36.98h0Z" fill="#044872"/>
+    </g>
+  </g>
+</svg>

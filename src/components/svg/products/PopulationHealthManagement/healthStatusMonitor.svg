@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PopulationHealthManagement">
+    <g id="healthStatusMonitor">
+      <rect x="11.33" y="15.86" width="85.39" height="79.58" fill="#fff"/>
+      <polyline points="11.33 56.74 28.51 56.74 37.32 64.61 47.67 37 60.82 75.89 71.23 48.87 78.11 56.74 96.72 56.74" fill="none" stroke="#00a2c5" stroke-miterlimit="10" stroke-width="5.1"/>
+      <rect x="11.33" y="15.86" width="85.39" height="79.58" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.81"/>
+      <polygon points="78.34 93.73 11.33 95.45 11.33 15.86 32.43 15.86 78.34 93.73" isolation="isolate" opacity=".12"/>
+      <circle cx="96.72" cy="56.66" r="6.91" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.81"/>
+      <circle cx="10.55" cy="56.66" r="6.91" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.81"/>
+    </g>
+  </g>
+</svg>

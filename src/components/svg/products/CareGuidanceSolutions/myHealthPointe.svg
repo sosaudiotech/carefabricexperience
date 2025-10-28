@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareGuidanceSolutions">
+    <g id="myHealthPointe">
+      <g id="Icons_Color_RGB">
+        <g>
+          <g>
+            <polygon points="53.73 54.03 63.5 60.48 65.5 58.7 65.68 55.64 53.73 54.03" isolation="isolate" opacity=".12"/>
+            <polygon points="65.87 51.92 53.51 51.92 54.93 65.47 65.16 65.47 65.87 51.92" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+            <path d="M47.06,27.85h-.05c-1.93.59-2.59,2.2-2.17,4.55.43,2.36,2.46,4.34,2.46,4.34l-.25-8.89Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+            <path d="M76.82,31.09l.05.02c1.76.97,1.92,2.75,1.15,4.9s-3.27,4.07-3.27,4.07l2.08-8.99Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+            <path d="M63.73,13.21c-8.27-.9-15.68,4.86-16.48,12.3-.54,5,.35,15.38.99,21.65.32,3.08,2.58,5.58,5.61,6.23l9.35,1.95c3.55.74,7.08-1.31,8.2-4.75,2.13-6.58,5.25-16.83,5.8-21.82.82-7.69-5.2-14.65-13.47-15.56Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+            <g>
+              <polygon points="94.14 88.89 27.47 88.59 27.47 65.47 54.15 58.93 59.7 63.85 65.5 58.7 90.24 69.08 94.14 88.89" fill="#fff"/>
+              <polygon points="94.14 88.89 27.47 88.59 27.47 65.47 54.15 58.93 59.7 63.85 65.5 58.7 90.24 69.08 94.14 88.89" fill="#00a2c5"/>
+              <polygon points="94.14 88.89 27.47 88.59 27.47 65.47 54.15 58.93 59.7 63.85 65.5 58.7 90.24 69.08 94.14 88.89" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+            </g>
+            <polyline points="61.83 30.65 59.88 38.45 63.47 38.45" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+          </g>
+          <rect x="18.5" y="48.89" width="60.86" height="39.69" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+          <line x1="3.17" y1="88.89" x2="103.17" y2="88.89" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+          <polygon points="61.75 88.75 18.5 88.58 18.5 48.89 40.58 48.89 61.75 88.75" isolation="isolate" opacity=".12"/>
+          <circle cx="48.94" cy="68.73" r="6.13" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.71"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

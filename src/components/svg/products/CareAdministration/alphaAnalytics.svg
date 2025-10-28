@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareAdministration">
+    <g id="RevenueCycleTechnology">
+      <g id="AlphaAnalytics">
+        <g>
+          <g>
+            <polyline points="105.16 92.37 5.16 92.37 5.16 22.68" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+            <rect x="16.2" y="54.22" width="19.71" height="38.15" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+            <rect x="46.46" y="30.16" width="19.71" height="62.21" fill="#e87722" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+            <rect x="76.72" y="59.42" width="19.71" height="32.95" fill="#84bd00" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+          </g>
+          <polyline points="5.16 45.43 26.05 54.22 57.04 30.16 86.57 60.69 105.16 70.78" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+          <circle cx="26.05" cy="54.22" r="4.06" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+          <circle cx="57.04" cy="30.16" r="4.06" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+          <circle cx="86.57" cy="60.69" r="4.06" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

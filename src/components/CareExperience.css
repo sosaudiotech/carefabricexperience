@@ -1,0 +1,103 @@
+.care-experience {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+}
+
+/* Connection status indicator */
+.connection-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.connection-indicator.connecting .indicator-dot {
+    background: #fbbf24;
+}
+
+.connection-indicator.connected .indicator-dot {
+    background: #10b981;
+}
+
+.connection-indicator.disconnected .indicator-dot {
+    background: #ef4444;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Unified fixed-size container for wheel + subsections */
+.unified-container {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    transition: all 0.5s ease;
+}
+
+/* Wheel container - fills the unified container */
+.wheel-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+
+/* Scale down wheel when subsection is active */
+.unified-container.has-subsection .wheel-container {
+    transform: scale(1);
+}
+
+/* Invisible center button that appears when wheel is shrunk */
+.wheel-center-button {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    transition: all 0.3s ease;
+}
+
+/* Subtle hover effect - slight darkening */
+.wheel-center-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the icon completely */
+.center-icon {
+    display: none;
+}

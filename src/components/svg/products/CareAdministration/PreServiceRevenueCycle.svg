@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareAdministration">
+    <g id="RevenueCycleServices">
+      <g id="PreServiceRevenueCycle">
+        <rect x="20.27" y="13.06" width="69.15" height="85.97" fill="#e87722" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <rect x="26.74" y="17.43" width="56.73" height="73.41" fill="#fff"/>
+        <rect x="34.94" y="29.98" width="16.49" height="7.33" fill="#00a2c5"/>
+        <rect x="59.68" y="29.98" width="16.49" height="7.33" fill="#00a2c5"/>
+        <line x1="51.56" y1="46.07" x2="34.94" y2="46.07" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="51.56" y1="54.83" x2="34.94" y2="54.83" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="51.56" y1="63.58" x2="34.94" y2="63.58" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="51.44" y1="72.34" x2="34.94" y2="72.34" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="51.44" y1="81.1" x2="34.94" y2="81.1" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="76.24" y1="46.07" x2="59.62" y2="46.07" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="76.24" y1="54.83" x2="59.62" y2="54.83" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="76.18" y1="63.58" x2="59.62" y2="63.58" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="76.24" y1="72.34" x2="59.62" y2="72.34" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <line x1="76.18" y1="81.1" x2="59.62" y2="81.1" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <polygon points="78.22 90.84 26.74 90.84 26.74 17.43 34.94 17.43 78.22 90.84" isolation="isolate" opacity=".12"/>
+        <rect x="26.74" y="17.43" width="56.73" height="73.41" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.21"/>
+        <rect x="26.74" y="17.43" width="56.73" height="73.41" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <path d="M60.28,10.84v-1.98c0-2.86-2.32-5.17-5.18-5.17-2.85,0-5.17,2.32-5.17,5.17v1.98h-11.15l-1.91,11.58h36.46l-1.91-11.58h-11.15Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.79"/>
+        <circle cx="81.93" cy="84.79" r="18.91" fill="#84bd00" stroke="#044872" stroke-miterlimit="10" stroke-width="1.55"/>
+        <polygon points="78.76 94.28 71.06 86.58 74.9 82.75 78.76 86.61 90.08 75.3 93.91 79.13 78.76 94.28" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.55"/>
+      </g>
+    </g>
+  </g>
+</svg>

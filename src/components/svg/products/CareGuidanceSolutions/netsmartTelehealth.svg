@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareGuidanceSolutions">
+    <g id="netsmartTelehealth">
+      <rect x="6.15" y="17.04" width="82.68" height="59.75" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <rect x="15.98" y="17.04" width="63.03" height="59.75" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <rect x="15.98" y="17.04" width="63.03" height="59.75" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <rect x="21.75" y="29.86" width="51.47" height="34.11" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <rect x="9.81" y="41.04" width="1.98" height="11.76" rx=".2" ry=".2" fill="#044872"/>
+      <circle cx="83.69" cy="46.92" r="2.09" fill="#044872"/>
+      <path d="M49.44,32.79c4.83,0,8.74,3.78,8.74,8.12s-4.47,12.83-4.47,12.83h-8.23s-4.78-8.34-4.78-12.84,3.91-8.12,8.74-8.12Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <path d="M56.42,55.03c-4.15-2.05-8.96-2.28-13.29-.65l-14.97,5.89-.8,3.63,41.43.07v-2.84l-12.37-6.1Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <polygon points="106.15 50.5 48.52 50.5 48.52 79.6 81.94 79.6 96.78 94.44 96.78 79.6 106.15 79.6 106.15 50.5" fill="#84bd00"/>
+      <polygon points="106.15 50.5 48.52 50.5 48.52 79.6 81.94 79.6 96.78 94.44 96.78 79.6 106.15 79.6 106.15 50.5" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <circle cx="92.26" cy="65.05" r="5.14" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <circle cx="77.81" cy="65.05" r="5.14" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+      <circle cx="63.36" cy="65.05" r="5.14" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.73"/>
+    </g>
+  </g>
+</svg>

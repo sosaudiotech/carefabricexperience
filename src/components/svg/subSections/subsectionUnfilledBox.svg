@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Subsections" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 605.17 582.74">
+  <g id="subSectionA">
+    <line x1="526.93" y1="260.31" x2="564.55" y2="223.01" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+    <line x1="78.23" y1="260.27" x2="40.84" y2="222.88" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+    <path d="M78.23,260.27c33.8-91.26,121.49-156.29,224.34-156.29s190.57,65.05,224.36,156.33" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+    <path d="M.44,182.53C57.9,74.24,171.67.5,302.62.5s244.2,75.22,302.11,182.03" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+    <line x1="564.36" y1="222.87" x2="604.73" y2="182.53" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+    <line x1="40.79" y1="222.88" x2=".44" y2="182.53" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+  </g>
+</svg>

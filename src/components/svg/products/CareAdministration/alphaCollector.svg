@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareAdministration">
+    <g id="RevenueCycleTechnology">
+      <g id="AlphaCollector">
+        <path d="M88.56,69.88V22.44H17.19v47.44h71.37Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <polygon points="2.88 69.88 102.88 69.88 100.25 77.03 5.5 77.03 2.88 69.88" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <rect x="24.14" y="29.58" width="57.47" height="33.88" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <polygon points="65.19 64.03 23.47 63.46 24.66 29.58 44.88 29.58 65.19 64.03" fill="#044872" isolation="isolate" opacity=".12"/>
+        <rect x="29.34" y="39.13" width="28.12" height="16.34" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <rect x="34.7" y="34.76" width="28.12" height="16.34" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <rect x="39.59" y="38.99" width="35.73" height="20.28" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <line x1="58.98" y1="44.39" x2="71.37" y2="44.39" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <line x1="58.98" y1="48.91" x2="71.37" y2="48.91" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <line x1="58.98" y1="53.44" x2="71.37" y2="53.44" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.87"/>
+        <polygon points="54.77 46.52 51.19 46.52 51.19 42.94 47.03 42.94 47.03 46.52 43.45 46.52 43.45 50.67 47.03 50.67 47.03 54.26 51.19 54.26 51.19 50.67 54.77 50.67 54.77 46.52" fill="#84bd00"/>
+      </g>
+    </g>
+  </g>
+</svg>

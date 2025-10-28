@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PlexusServices">
+    <g id="OneTeam">
+      <polygon points="88.13 87.31 52.38 103.95 18.82 87.31 18.82 34.64 88.13 34.64 88.13 87.31" fill="#fff"/>
+      <line x1="18.82" y1="54.33" x2="21.24" y2="54.33" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.9"/>
+      <line x1="26.2" y1="54.33" x2="83.23" y2="54.33" fill="none" stroke="#044872" stroke-dasharray="4.96 4.96" stroke-miterlimit="10" stroke-width="1.9"/>
+      <line x1="85.71" y1="54.33" x2="88.13" y2="54.33" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.9"/>
+      <path d="M60.69,3.95h0c-3.86.01-6.99,3.14-6.99,7.01v23.71h13.97V10.93c0-3.86-3.12-6.98-6.98-6.99,0,0,0,0,0,0Z" fill="#e87722" stroke="#044872" stroke-miterlimit="10" stroke-width="1.9"/>
+      <path d="M46.49,8.32h0c-3.86,0-6.98,3.13-6.98,6.98h0v19.34h13.97V15.31c-.01-3.85-3.13-6.97-6.99-6.99Z" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.9"/>
+      <line x1="60.69" y1="19.29" x2="60.69" y2="48.69" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.9"/>
+      <polygon points="52.38 103.95 88.13 86.87 88.13 34.64 79.05 34.64 79.05 82.04 43.22 99.15 52.38 103.95" isolation="isolate" opacity=".12"/>
+      <polygon points="88.13 87.31 52.38 103.95 18.82 87.31 18.82 34.64 88.13 34.64 88.13 87.31" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.9"/>
+    </g>
+  </g>
+</svg>

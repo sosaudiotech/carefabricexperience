@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PlexusServices">
+    <g id="plexusConsulting">
+      <rect x="8.06" y="25.69" width="91.93" height="65.07" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.03"/>
+      <rect x="15.18" y="32.81" width="77.67" height="43.69" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="2.03"/>
+      <rect x="40.56" y="90.76" width="26.93" height="8.7" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.03"/>
+      <polygon points="67.47 99.46 63.46 99.46 40.56 90.76 67.47 90.76 67.47 99.46" isolation="isolate" opacity=".12"/>
+      <rect x="30.46" y="99.46" width="47.09" height="4.35" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.03"/>
+      <rect x="26.09" y="40.7" width="55.33" height="28.42" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.03"/>
+      <polygon points="42.09 3.81 42.09 26.21 27.98 26.21 53.76 57.82 79.54 26.21 65.43 26.21 65.43 3.81 42.09 3.81" fill="#84bd00" stroke="#044872" stroke-miterlimit="10" stroke-width="2.03"/>
+    </g>
+  </g>
+</svg>

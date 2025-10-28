@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareRecords">
+    <g id="Enterprise">
+      <g id="myUnity">
+        <g>
+          <rect x="26.26" y="49.35" width="56.4" height="34.9" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.5"/>
+          <polygon points="15.16 84.15 20.06 76.05 26.96 73.25 35.06 77.45 37.36 84.15 15.16 84.15" fill="#84bd00" stroke="#044872" stroke-miterlimit="10" stroke-width="1.5"/>
+          <polygon points="69.46 84.15 72.06 75.75 82.46 73.25 89.56 77.85 91.86 84.65 69.46 84.15" fill="#84bd00" stroke="#044872" stroke-miterlimit="10" stroke-width="1.5"/>
+          <polygon points="27.06 53.05 81.86 53.05 81.86 61.95 27.06 56.65 27.06 53.05" isolation="isolate" opacity=".1"/>
+          <polygon points="92.06 53.05 16.86 53.05 54.46 24.35 92.06 53.05" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.5"/>
+          <path d="M67.36,48.85h0c-2.8-2.8-7.4-2.8-10.2,0l-2.8,2.8-2.8-2.8c-2.8-2.8-7.4-2.8-10.2,0-2.8,2.8-2.7,7.4,0,10.2,2.7,2.7,12.9,12.6,12.9,12.6,0,0,10.2-9.9,12.9-12.6s2.8-7.4,0-10.2h.2Z" fill="#e87722" stroke="#044872" stroke-miterlimit="10" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

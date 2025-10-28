@@ -1,0 +1,14 @@
+.spinwheel-container {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+}
+
+.category {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+    .category:hover {
+        transform: scale(1.1);
+    }

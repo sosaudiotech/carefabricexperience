@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareAdministration">
+    <g id="RevenueCycleServices">
+      <g id="CodingServices">
+        <g>
+          <rect x="35.57" y="4.93" width="63.59" height="82.29" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+          <rect x="27.89" y="12.62" width="63.59" height="82.29" fill="#fff"/>
+          <g>
+            <line x1="81.68" y1="43.95" x2="37.07" y2="43.95" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+            <line x1="81.68" y1="53.77" x2="37.07" y2="53.77" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+            <line x1="81.68" y1="63.58" x2="37.07" y2="63.58" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+            <line x1="81.68" y1="24.32" x2="37.07" y2="24.32" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+            <line x1="81.68" y1="34.14" x2="37.07" y2="34.14" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+            <line x1="81.68" y1="73.4" x2="37.07" y2="73.4" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+            <line x1="74.05" y1="83.22" x2="37.07" y2="83.22" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+          </g>
+          <polygon points="85.59 94.92 27.89 94.92 27.89 12.62 37.07 12.62 85.59 94.92" isolation="isolate" opacity=".12"/>
+          <rect x="27.89" y="12.62" width="63.59" height="82.29" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+        </g>
+        <g>
+          <g>
+            <path d="M35.57,41.87c5.53,10.26,24.24,10.73,28.25,10.73,0,45.29-28.25,52.34-28.25,52.34h0s-28.25-7.05-28.25-52.34c4,0,22.71-.47,28.25-10.73h0Z" fill="#fff"/>
+            <path d="M35.57,41.87c5.53,10.26,24.24,10.73,28.25,10.73,0,45.29-28.25,52.34-28.25,52.34h0s-28.25-7.05-28.25-52.34c4,0,22.71-.47,28.25-10.73h0Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width=".29"/>
+            <path d="M35.57,41.87c5.53,10.26,24.24,10.73,28.25,10.73,0,45.29-28.25,52.34-28.25,52.34h0s-28.25-7.05-28.25-52.34c4,0,22.71-.47,28.25-10.73h0Z" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+          </g>
+          <polygon points="49.57 68.26 40.71 68.26 40.71 59.41 30.44 59.41 30.44 68.26 21.58 68.26 21.58 78.54 30.44 78.54 30.44 87.39 40.71 87.39 40.71 78.54 49.57 78.54 49.57 68.26" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="2.3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

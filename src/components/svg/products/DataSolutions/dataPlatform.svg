@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="DataSolutions">
+    <g id="dataPlatform">
+      <polyline points="93.32 46.26 80.87 46.26 80.87 71.33 100.92 71.33" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      <line x1="93.74" y1="58.8" x2="70.46" y2="58.8" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      <circle cx="100.92" cy="71.33" r="4.16" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      <circle cx="93.74" cy="46.57" r="2.98" fill="#82bc41"/>
+      <circle cx="93.74" cy="58.8" r="2.98" fill="#0092b2"/>
+      <polyline points="16.85 46.26 29.3 46.26 29.3 71.33 16.24 71.33" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      <line x1="8.93" y1="58.8" x2="39.71" y2="58.8" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      <circle cx="9.24" cy="58.8" r="4.16" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      <circle cx="16.43" cy="46.57" r="2.98" fill="#044872"/>
+      <circle cx="16.43" cy="71.33" r="2.98" fill="#e87722"/>
+      <g>
+        <path d="M55.07,38.85c-10.18,0-18.44,3.06-18.44,6.83v24c0,3.77,8.25,6.83,18.44,6.83s18.44-3.06,18.44-6.83v-24c0-3.77-8.25-6.83-18.44-6.83Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+        <path d="M73.5,70.28s-1.78,4.88-12.86,5.53l5.17-24.63c4.78-.06,7.68-4.36,7.68-4.36v23.46h0Z" isolation="isolate" opacity=".12"/>
+        <path d="M36.63,45.67v24c0,3.77,8.25,6.83,18.44,6.83s18.44-3.06,18.44-6.83v-24" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+        <path d="M73.5,61.91c0,3.77-8.25,6.83-18.44,6.83s-18.44-3.06-18.44-6.83" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+        <path d="M73.5,54.14c0,3.77-8.25,6.83-18.44,6.83s-18.44-3.06-18.44-6.83" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+        <ellipse cx="55.07" cy="45.67" rx="18.44" ry="6.83" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.63"/>
+      </g>
+    </g>
+  </g>
+</svg>

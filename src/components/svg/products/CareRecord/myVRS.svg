@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareRecords">
+    <g id="Enterprise">
+      <g id="myVRS">
+        <polygon points="38.95 27.9 38.95 22 10.55 22 10.55 85.9 88.95 85.9 88.95 27.9 38.95 27.9" fill="#fff"/>
+        <polygon points="38.95 27.9 38.95 22 10.55 22 10.55 85.9 88.95 85.9 88.95 27.9 38.95 27.9" stroke="#044872" stroke-miterlimit="10" stroke-width="1.6"/>
+        <rect x="15.25" y="31.8" width="69.2" height="53.7" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.6"/>
+        <rect x="22.95" y="35.9" width="17.6" height="49.6" fill="#84bd00"/>
+        <polygon points="46.65 40.5 47.45 35.9 97.45 35.9 88.95 85.9 10.55 85.9 18.25 40.5 46.65 40.5" fill="#fff"/>
+        <polygon points="46.85 86 88.75 86 97.45 35.9 83.05 35.9 46.85 86" isolation="isolate" opacity=".1"/>
+        <polygon points="46.65 40.5 47.45 35.9 97.45 35.9 88.95 85.9 10.55 85.9 18.25 40.5 46.65 40.5" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.6"/>
+        <polygon points="69.85 57.7 60.95 57.5 62.25 48.7 50.95 48.7 49.75 57.2 40.55 57 39.05 66.9 48.25 67.1 47.05 75.7 58.35 75.7 59.55 67.4 68.45 67.6 69.85 57.7" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.6"/>
+      </g>
+    </g>
+  </g>
+</svg>

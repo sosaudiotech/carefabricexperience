@@ -1,0 +1,348 @@
+import React, { useEffect, useState } from 'react';
+import { io, Socket } from 'socket.io-client';
+import './Display.css';
+
+interface DisplayState {
+    buttonId: string | null;
+    subcategoryId: string | null;
+    timestamp: number | null;
+}
+
+// Content mapping for different products - using ACTUAL button IDs from SubsectionRing
+const PRODUCT_CONTENT: Record<string, {
+    title: string;
+    description: string;
+    color: string;
+}> = {
+    // CareRecord - Enterprise
+    'myAvatar': {
+        title: 'myAvatar',
+        description: 'Comprehensive EHR platform for behavioral health and human services',
+        color: '#2563eb'
+    },
+    'myEvolve': {
+        title: 'myEvolve',
+        description: 'Integrated care management and clinical documentation solution',
+        color: '#7c3aed'
+    },
+    'myUnity': {
+        title: 'myUnity',
+        description: 'Unified platform for behavioral health providers',
+        color: '#059669'
+    },
+    'myInsight': {
+        title: 'myInsight',
+        description: 'Data analytics and reporting for healthcare organizations',
+        color: '#0891b2'
+    },
+    'myVRS': {
+        title: 'myVRS',
+        description: 'Vocational rehabilitation services management system',
+        color: '#8b5cf6'
+    },
+    
+    // CareRecord - SpecialtyServices
+    'addictionTreatment': {
+        title: 'Addiction Treatment',
+        description: 'Specialized EHR for substance abuse and addiction treatment facilities',
+        color: '#dc2626'
+    },
+    'theraOffice': {
+        title: 'TheraOffice',
+        description: 'Practice management for therapy and rehabilitation services',
+        color: '#ea580c'
+    },
+    'gehriMed': {
+        title: 'GehriMed',
+        description: 'Geriatric and long-term care electronic medical records',
+        color: '#ca8a04'
+    },
+    
+    // CareAdministration - Technology
+    'alphaAnalytics': {
+        title: 'Alpha Analytics',
+        description: 'Advanced analytics and business intelligence platform',
+        color: '#2563eb'
+    },
+    'alphaCoding': {
+        title: 'Alpha Coding',
+        description: 'Automated medical coding and compliance solution',
+        color: '#7c3aed'
+    },
+    'alphaCollector': {
+        title: 'Alpha Collector',
+        description: 'Revenue cycle management and collections platform',
+        color: '#059669'
+    },
+    'alphaVerify': {
+        title: 'Alpha Verify',
+        description: 'Insurance verification and eligibility checking system',
+        color: '#0891b2'
+    },
+    'Benny': {
+        title: 'Benny',
+        description: 'AI-powered virtual assistant for healthcare operations',
+        color: '#8b5cf6'
+    },
+    'RevConnect': {
+        title: 'RevConnect',
+        description: 'Revenue cycle connectivity and integration hub',
+        color: '#ec4899'
+    },
+    
+    // CareAdministration - Services
+    'AdvisoryConsulting': {
+        title: 'Advisory & Consulting',
+        description: 'Strategic consulting services for healthcare organizations',
+        color: '#dc2626'
+    },
+    'CodingServices': {
+        title: 'Coding Services',
+        description: 'Professional medical coding and audit services',
+        color: '#ea580c'
+    },
+    'backOfficeRevenueCycle': {
+        title: 'Back Office Revenue Cycle',
+        description: 'Comprehensive back-office revenue cycle management',
+        color: '#ca8a04'
+    },
+    'PreServiceRevenueCycle': {
+        title: 'Pre-Service Revenue Cycle',
+        description: 'Front-end revenue cycle optimization services',
+        color: '#65a30d'
+    },
+    
+    // CareGuidanceSolutions
+    'Bells': {
+        title: 'Bells',
+        description: 'Care coordination and case management platform',
+        color: '#2563eb'
+    },
+    'myHealthPointe': {
+        title: 'myHealthPointe',
+        description: 'Patient engagement and wellness management solution',
+        color: '#7c3aed'
+    },
+    'netsmartTelehealth': {
+        title: 'Netsmart Telehealth',
+        description: 'Comprehensive telehealth and virtual care platform',
+        color: '#059669'
+    },
+    'orderConnect': {
+        title: 'Order Connect',
+        description: 'Electronic orders and referral management system',
+        color: '#0891b2'
+    },
+    
+    // DataSolutions
+    'coreAnalytics': {
+        title: 'Core Analytics',
+        description: 'Enterprise-wide healthcare analytics platform',
+        color: '#2563eb'
+    },
+    'dataPlatform': {
+        title: 'Data Platform',
+        description: 'Unified data integration and management solution',
+        color: '#7c3aed'
+    },
+    'healthPivots': {
+        title: 'Health Pivots',
+        description: 'Dynamic reporting and data visualization tool',
+        color: '#059669'
+    },
+    'kpiDashboard': {
+        title: 'KPI Dashboard',
+        description: 'Real-time key performance indicator monitoring',
+        color: '#0891b2'
+    },
+    'simpleAnalyzer': {
+        title: 'Simple Analyzer',
+        description: 'Easy-to-use analytics for care providers',
+        color: '#8b5cf6'
+    },
+    'simpleHomeHealth': {
+        title: 'Simple Home Health',
+        description: 'Analytics specifically for home health agencies',
+        color: '#ec4899'
+    },
+    'simpleHospice': {
+        title: 'Simple Hospice',
+        description: 'Hospice care analytics and reporting',
+        color: '#dc2626'
+    },
+    'simplePBJ': {
+        title: 'Simple Payroll Based Journal',
+        description: 'Payroll-based journal reporting solution',
+        color: '#ea580c'
+    },
+    
+    // PlexusServices
+    'OneTeam': {
+        title: 'OneTeam',
+        description: 'Collaborative care team coordination platform',
+        color: '#2563eb'
+    },
+    'plexusCloud': {
+        title: 'Plexus Cloud',
+        description: 'Cloud infrastructure and hosting services',
+        color: '#7c3aed'
+    },
+    'plexusConsulting': {
+        title: 'Plexus Consulting',
+        description: 'IT consulting and implementation services',
+        color: '#059669'
+    },
+    
+    // PopulationHealthManagement
+    'careConnect': {
+        title: 'Care Connect',
+        description: 'Population health management and care coordination',
+        color: '#2563eb'
+    },
+    'careConnectInbox': {
+        title: 'Care Connect Inbox',
+        description: 'Centralized care management communication hub',
+        color: '#7c3aed'
+    },
+    'careManager': {
+        title: 'Care Manager',
+        description: 'Comprehensive care management workflow solution',
+        color: '#059669'
+    },
+    'healthStatusMonitor': {
+        title: 'Health Status Monitor',
+        description: 'Real-time patient health status tracking',
+        color: '#0891b2'
+    },
+    'higherPath': {
+        title: 'Higher Path',
+        description: 'Integrated care pathways and clinical protocols',
+        color: '#8b5cf6'
+    },
+    'referralManager': {
+        title: 'Referral Manager',
+        description: 'Patient referral tracking and management system',
+        color: '#ec4899'
+    },
+    
+    // WorkForceManagement
+    'careRouter': {
+        title: 'CareRouter',
+        description: 'Intelligent routing and scheduling for care teams',
+        color: '#2563eb'
+    },
+    'mobileCaregiver': {
+        title: 'Mobile Caregiver',
+        description: 'Mobile app for field-based care providers',
+        color: '#7c3aed'
+    }
+};
+
+export default function Display() {
+    const [state, setState] = useState<DisplayState>({
+        buttonId: null,
+        subcategoryId: null,
+        timestamp: null
+    });
+    const [socket, setSocket] = useState<Socket | null>(null);
+    const [connectionStatus, setConnectionStatus] = useState<'connecting' | 'connected' | 'disconnected'>('connecting');
+
+    useEffect(() => {
+        // Connect to the server
+        const serverUrl = process.env.REACT_APP_SERVER_URL || 'http://localhost:3001';
+        const newSocket = io(serverUrl);
+
+        newSocket.on('connect', () => {
+            console.log('Connected to server');
+            setConnectionStatus('connected');
+        });
+
+        newSocket.on('disconnect', () => {
+            console.log('Disconnected from server');
+            setConnectionStatus('disconnected');
+        });
+
+        newSocket.on('state-update', (newState: DisplayState) => {
+            console.log('State update received:', newState);
+            setState(newState);
+        });
+
+        setSocket(newSocket);
+
+        return () => {
+            newSocket.close();
+        };
+    }, []);
+
+    const currentProduct = state.buttonId ? PRODUCT_CONTENT[state.buttonId] : null;
+
+    return (
+        <div className="display-container">
+            {/* Connection status indicator */}
+            <div className={`connection-status ${connectionStatus}`}>
+                <div className="status-dot"></div>
+                <span>{connectionStatus}</span>
+            </div>
+
+            {/* Main content area */}
+            <div className="display-content">
+                {currentProduct ? (
+                    <div 
+                        className="product-display"
+                        style={{ borderColor: currentProduct.color }}
+                    >
+                        <div className="product-header">
+                            <div 
+                                className="product-icon"
+                                style={{ backgroundColor: currentProduct.color }}
+                            >
+                                {currentProduct.title.charAt(0)}
+                            </div>
+                            <h1 style={{ color: currentProduct.color }}>
+                                {currentProduct.title}
+                            </h1>
+                        </div>
+                        
+                        <div className="product-body">
+                            <p className="product-description">
+                                {currentProduct.description}
+                            </p>
+                            
+                            <div className="product-meta">
+                                <div className="meta-item">
+                                    <span className="meta-label">Category:</span>
+                                    <span className="meta-value">{state.subcategoryId}</span>
+                                </div>
+                                <div className="meta-item">
+                                    <span className="meta-label">Product ID:</span>
+                                    <span className="meta-value">{state.buttonId}</span>
+                                </div>
+                            </div>
+
+                            {/* Placeholder for future content */}
+                            <div className="product-features">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li>Real-time data synchronization</li>
+                                    <li>Advanced analytics and reporting</li>
+                                    <li>Seamless integration capabilities</li>
+                                    <li>Enhanced security and compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="idle-display">
+                        <div className="idle-content">
+                            <div className="idle-logo">
+                                <div className="logo-circle"></div>
+                            </div>
+                            <h2>Care Fabric Experience</h2>
+                            <p>Waiting for product selection...</p>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}

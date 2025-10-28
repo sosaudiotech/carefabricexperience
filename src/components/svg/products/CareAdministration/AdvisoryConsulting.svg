@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareAdministration">
+    <g id="RevenueCycleServices">
+      <g id="AdvisoryConsulting">
+        <path d="M54.01,44.99l18.93,20.58c2.42,2.63,2.25,6.73-.38,9.15-.63.58-1.37,1.03-2.17,1.32l-21.53,7.84c-2.27.83-4.82.12-6.33-1.76l-20-24.86,14.26-18.46,17.22,6.19Z" fill="#fff" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <path d="M38.19,51.09l9.26-13.4c1.08-1.55,2.9-2.42,4.78-2.27l17.27,2.17,14.05-2,9.39,9.8-9.48,5.59-1.62,6.23c-.59,2.29-2.08,4.25-4.14,5.42l-4.75,2.97-17.06-16.37-1.52-1.46-5.46,7.16c-1.55,2.03-4.45,2.42-6.48.87-.24-.19-.47-.39-.67-.62l-3.57-4.08Z" fill="#fff"/>
+        <path d="M37.42,83.02l-15.11-19.21,5.72-5.26c1.26-.88,3.16-.83,4.48.89l12.49,16.49c.91,1.21.67,2.92-.54,3.83-.1.08-.21.14-.32.21l-6.73,3.06Z" fill="#fff" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <polygon points="39.81 36.23 20.28 59.87 9.64 56.18 29.98 28.75 39.81 36.23" fill="#84bd00" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <line x1="34.51" y1="62.03" x2="25.95" y2="68.44" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <line x1="38.61" y1="67.49" x2="29.89" y2="73.94" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <line x1="42.86" y1="73.1" x2="33.96" y2="78.62" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <line x1="58.43" y1="62.71" x2="69.66" y2="76.33" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <line x1="50.88" y1="66.4" x2="61.87" y2="79.07" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <line x1="44.65" y1="70.57" x2="53.89" y2="81.81" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <path d="M54.39,47.71l18.55,17.87,4.75-2.97c2.05-1.17,3.55-3.12,4.14-5.4l1.62-6.22,9.48-5.59-9.39-9.8-14.05,2-17.27-2.17c-1.88-.14-3.7.72-4.78,2.27l-9.26,13.4,3.57,4.06c1.69,1.92,4.6,2.1,6.52.42.23-.2.44-.43.62-.67l5.46-7.16,7.62-1.08" fill="none" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+        <polygon points="91.96 56.59 77.88 29.35 87.06 23.77 102.69 53.54 91.96 56.59" fill="#00a2c5" stroke="#044872" stroke-miterlimit="3.33" stroke-width="1.54"/>
+      </g>
+    </g>
+  </g>
+</svg>

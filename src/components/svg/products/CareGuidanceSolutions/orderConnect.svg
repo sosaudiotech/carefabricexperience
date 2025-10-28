@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="CareGuidanceSolutions">
+    <g id="orderConnect">
+      <rect x="13.78" y="3.77" width="71.84" height="81.35" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.33"/>
+      <path d="M66.12,29.88h-6.86l-3.85,5.66-3.73-5.9c.12,0,.36-.12.36-.12,2.89-1.08,5.9-3.97,5.9-8.3,0-3.13-1.08-5.42-3.13-6.98-2.41-1.93-5.9-2.65-10.83-2.65h-9.51v33.81h6.86v-13.24h2.29c.72,0,1.56,0,2.29-.12l5.9,8.9-6.74,10.11h6.86l3.25-4.93,3.25,4.93h6.86l-6.5-10.23,7.34-10.95ZM44.34,26.88h-3.01v-9.51h3.49c3.49,0,5.54,1.56,5.54,4.69,0,2.89-2.17,4.81-6.02,4.81Z" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="2.33"/>
+      <line x1="24.73" y1="62.14" x2="76.47" y2="62.14" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.33"/>
+      <line x1="24.73" y1="73.57" x2="76.47" y2="73.57" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.33"/>
+      <polygon points="104.51 77.42 70.82 54.79 70.94 95.35 82.37 87.29 91.27 103.77 100.3 98.96 91.51 82.35 104.51 77.42" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.33"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="DataSolutions">
+    <g id="simplePBJ">
+      <g>
+        <rect x="23.24" y="4.81" width="72.56" height="93.89" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="2.05"/>
+        <rect x="17.14" y="10.91" width="72.56" height="93.89" fill="#fff"/>
+        <polygon points="82.98 104.81 17.14 104.81 17.14 10.91 27.63 10.91 82.98 104.81" isolation="isolate" opacity=".12"/>
+        <rect x="17.14" y="10.91" width="72.56" height="93.89" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="2.05"/>
+      </g>
+      <g>
+        <polygon points="53.38 13.86 57.07 25.21 69 25.21 59.35 32.21 63.03 43.56 53.38 36.55 43.74 43.56 47.42 32.21 37.77 25.21 49.7 25.21 53.38 13.86" fill="#0092b2" stroke="#044872" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.05"/>
+        <polygon points="34.62 72.17 38.31 83.51 50.23 83.51 40.58 90.52 44.27 101.86 34.62 94.85 24.97 101.86 28.66 90.52 19.01 83.51 30.93 83.51 34.62 72.17" fill="#0092b2" stroke="#044872" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.05"/>
+        <polygon points="72.15 72.17 75.84 83.51 87.76 83.51 78.11 90.52 81.8 101.86 72.15 94.85 62.5 101.86 66.18 90.52 56.54 83.51 68.46 83.51 72.15 72.17" fill="#0092b2" stroke="#044872" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.05"/>
+        <polygon points="23.4 37.51 27.08 48.86 39.01 48.86 29.36 55.87 33.05 67.21 23.4 60.2 13.75 67.21 17.43 55.87 7.79 48.86 19.71 48.86 23.4 37.51" fill="#0092b2" stroke="#044872" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.05"/>
+        <polygon points="83.45 36.73 87.13 48.07 99.06 48.07 89.41 55.08 93.09 66.42 83.45 59.41 73.8 66.42 77.48 55.08 67.84 48.07 79.76 48.07 83.45 36.73" fill="#0092b2" stroke="#044872" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.05"/>
+      </g>
+    </g>
+  </g>
+</svg>

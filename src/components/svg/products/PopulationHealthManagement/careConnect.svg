@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PopulationHealthManagement">
+    <g id="careConnect">
+      <g>
+        <polygon points="33.78 77.07 72.58 77.07 72.58 90.73 103.15 65.8 72.58 40.86 72.58 54.51 33.78 54.51 33.78 77.07" fill="#84bd00"/>
+        <polygon points="72.51 31.86 33.71 31.86 33.71 18.21 3.15 43.14 33.71 68.07 33.71 54.43 72.51 54.43 72.51 31.86" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.78"/>
+        <polygon points="72.76 40.86 72.76 54.43 33.95 54.43 33.95 60.44 78.25 60.44 78.25 45.48 72.76 40.86" isolation="isolate" opacity=".12"/>
+        <polygon points="33.78 77.07 72.58 77.07 72.58 90.73 103.15 65.8 72.58 40.86 72.58 54.51 33.78 54.51 33.78 77.07" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.78"/>
+      </g>
+    </g>
+  </g>
+</svg>

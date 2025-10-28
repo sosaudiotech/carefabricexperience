@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <g id="PopulationHealthManagement">
+    <g id="careManager">
+      <g>
+        <g>
+          <path d="M77.18,26.91c4.52,0,8.18,3.55,8.18,7.61s-4.19,12.03-4.19,12.03h-7.7s-4.48-7.83-4.48-12.03,3.66-7.61,8.18-7.61Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+          <circle cx="76.8" cy="38.87" r="16.01" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+          <path d="M83.72,47.76c-3.89-1.92-8.4-2.14-12.45-.61l-6.31,2.48c2.93,3.23,7.15,5.26,11.84,5.26s8.57-1.88,11.49-4.87l-4.57-2.26Z" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+        </g>
+        <g>
+          <path d="M31.29,26.91c4.52,0,8.18,3.55,8.18,7.61s-4.19,12.03-4.19,12.03h-7.7s-4.48-7.83-4.48-12.03,3.66-7.61,8.18-7.61Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+          <circle cx="30.91" cy="38.87" r="16.01" fill="none" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+          <path d="M37.83,47.76c-3.89-1.92-8.4-2.14-12.45-.61l-6.31,2.48c2.93,3.23,7.15,5.26,11.84,5.26s8.57-1.88,11.49-4.87l-4.57-2.26Z" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+        </g>
+        <circle cx="54.01" cy="68.27" r="24.66" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+        <path d="M54.5,50.85c5.07,0,9.17,3.97,9.17,8.53s-4.69,13.47-4.69,13.47h-8.63s-5.02-8.76-5.02-13.47,4.11-8.53,9.18-8.53Z" fill="#fff" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+        <path d="M61.82,74.2c-4.35-2.14-9.4-2.4-13.95-.69l-15.71,6.19c4.12,7.86,12.35,13.24,21.84,13.24,8.62,0,16.2-4.43,20.61-11.13l.17-1.21-12.96-6.4Z" fill="#00a2c5" stroke="#044872" stroke-miterlimit="10" stroke-width="1.7"/>
+        <path d="M29.36,72.39c-27.05-2.32-33.74-28.77-14.46-33.52" fill="none" stroke="#044872" stroke-dasharray="7.17 5.38" stroke-miterlimit="10" stroke-width="1.7"/>
+        <path d="M78.33,72.39c27.04-2.32,33.79-28.77,14.49-33.52" fill="none" stroke="#044872" stroke-dasharray="7.17 5.38" stroke-miterlimit="10" stroke-width="1.7"/>
+        <line x1="51.04" y1="34.9" x2="56.78" y2="34.9" fill="none" stroke="#044872" stroke-dasharray="7.17 5.38" stroke-miterlimit="10" stroke-width="1.7"/>
+      </g>
+    </g>
+  </g>
+</svg>
