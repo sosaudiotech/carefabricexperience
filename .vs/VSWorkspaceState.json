@@ -3,8 +3,9 @@
     "",
     "\\cms",
     "\\cms\\config",
+    "\\src",
     "\\src\\components"
   ],
-  "SelectedNode": "\\cms\\config\\server.ts",
+  "SelectedNode": "\\src\\components\\Display.tsx",
   "PreviewInSolutionExplorer": false
 }

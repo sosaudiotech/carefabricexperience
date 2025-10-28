@@ -77,7 +77,7 @@ function StatsSection({ section, layoutClass, liveStats, productColor }: any) {
 
     // Merge: use live stats if available, otherwise use static
     const displayStats = staticStats.map((stat: any) => {
-        const liveStat = liveStatsMap.get(stat.metric || stat.label) as StatDataAttributes | undefined;
+        const liveStat = liveStatsMap.get(stat.metric || stat.label);
         if (liveStat) {
             return {
                 ...stat,
