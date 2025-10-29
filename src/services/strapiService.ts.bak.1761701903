@@ -1,0 +1,303 @@
+// Strapi API Service
+// Handles all communication with Strapi CMS
+
+const STRAPI_URL = process.env.REACT_APP_STRAPI_URL || 'http://localhost:1337';
+const STRAPI_TOKEN = process.env.REACT_APP_STRAPI_TOKEN;
+
+interface StrapiResponse<T> {
+  data: T;
+  meta?: any;
+}
+
+interface ProductAttributes {
+  productId: string;
+  title: string;
+  tagline?: string;
+  description?: string;
+  color: string;
+  subcategory?: string;
+  template: 'standard' | 'analytics' | 'service' | 'video';
+  heroMedia?: any;
+  gallery?: any;
+  sections?: ContentSection[];
+  realtimeConfig?: RealtimeConfig;
+  active: boolean;
+  sortOrder?: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface ContentSection {
+  id: number;
+  sectionType: 'hero' | 'features' | 'stats' | 'video' | 'gallery' | 'text' | 'custom';
+  title?: string;
+  layout?: 'full' | 'split' | 'grid' | 'sidebar';
+  content?: any;
+  media?: any;
+  order?: number;
+}
+
+interface RealtimeConfig {
+  enabled: boolean;
+  endpoint?: string;
+  refreshInterval?: number;
+  authRequired?: boolean;
+}
+
+interface StatDataAttributes {
+  productId: string;
+  metric: string;
+  value: string;
+  trend?: string;
+  timestamp: string;
+}
+
+class StrapiService {
+  private baseUrl: string;
+  private token?: string;
+  private cache: Map<string, { data: any; timestamp: number }>;
+  private cacheDuration: number = 60000; // 1 minute
+
+  constructor() {
+    this.baseUrl = STRAPI_URL;
+    this.token = STRAPI_TOKEN;
+    this.cache = new Map();
+  }
+
+  /**
+   * Make authenticated request to Strapi
+   */
+  private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      ...(options.headers as Record<string, string>),
+    };
+
+    // Add token if available
+    if (this.token) {
+      headers['Authorization'] = `Bearer ${this.token}`;
+    }
+
+    const response = await fetch(`${this.baseUrl}${endpoint}`, {
+      ...options,
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Strapi API error: ${response.status} ${response.statusText}`);
+    }
+
+    return response.json();
+  }
+
+  /**
+   * Get cache key
+   */
+  private getCacheKey(endpoint: string): string {
+    return endpoint;
+  }
+
+  /**
+   * Check if cache is valid
+   */
+  private isCacheValid(key: string): boolean {
+    const cached = this.cache.get(key);
+    if (!cached) return false;
+    return Date.now() - cached.timestamp < this.cacheDuration;
+  }
+
+  /**
+   * Fetch all products
+   */
+  async getAllProducts(): Promise<ProductAttributes[]> {
+    const cacheKey = this.getCacheKey('/api/products?populate=*');
+
+    if (this.isCacheValid(cacheKey)) {
+      return this.cache.get(cacheKey)!.data;
+    }
+
+    const response = await this.request<StrapiResponse<any[]>>(
+      '/api/products?populate=*&filters[active][$eq]=true&sort=displayOrder:asc'
+    );
+
+    const products = response.data.map((item: any) => {
+      const attrs = item.attributes;
+      return {
+        ...attrs,
+        // Map heroVideo to heroMedia for compatibility
+        heroMedia: attrs.heroVideo,
+        // Map displayOrder to sortOrder
+        sortOrder: attrs.displayOrder,
+        // Map content_sections to sections
+        sections: attrs.content_sections,
+      };
+    });
+
+    this.cache.set(cacheKey, { data: products, timestamp: Date.now() });
+    return products;
+  }
+
+  /**
+   * Fetch single product by productId
+   */
+  async getProduct(productId: string): Promise<ProductAttributes | null> {
+    const cacheKey = this.getCacheKey(`/api/products/${productId}`);
+
+    if (this.isCacheValid(cacheKey)) {
+      return this.cache.get(cacheKey)!.data;
+    }
+
+    try {
+      // Simplified query that matches your actual schema
+      const response = await this.request<StrapiResponse<any[]>>(
+        `/api/products?filters[productId][$eq]=${productId}&populate=*`
+      );
+
+      if (response.data.length === 0) {
+        return null;
+      }
+
+      const attrs = response.data[0].attributes;
+
+      // Map Strapi v5 field names to our interface
+      const product: ProductAttributes = {
+        productId: attrs.productId,
+        title: attrs.title,
+        tagline: attrs.tagline,
+        description: attrs.description,
+        color: attrs.color || '#2563eb',
+        subcategory: attrs.subcategory,
+        template: attrs.template || 'standard',
+        active: attrs.active !== false,
+        sortOrder: attrs.displayOrder || 0,
+        createdAt: attrs.createdAt,
+        updatedAt: attrs.updatedAt,
+        // Map heroVideo to heroMedia
+        heroMedia: attrs.heroVideo?.data ? this.transformMediaUrl(attrs.heroVideo.data) : null,
+        // No gallery in current schema
+        gallery: null,
+        // Map content_sections to sections
+        sections: attrs.content_sections?.data || [],
+        // No realtimeConfig in current schema
+        realtimeConfig: null,
+      };
+
+      this.cache.set(cacheKey, { data: product, timestamp: Date.now() });
+      return product;
+    } catch (error) {
+      console.error(`Failed to fetch product ${productId}:`, error);
+      return null;
+    }
+  }
+
+  /**
+   * Transform media URL to absolute path
+   */
+  private transformMediaUrl(mediaData: any) {
+    if (!mediaData?.attributes?.url) return null;
+
+    const url = mediaData.attributes.url;
+    return {
+      url: url.startsWith('http') ? url : `${this.baseUrl}${url}`,
+      alternativeText: mediaData.attributes.alternativeText,
+      caption: mediaData.attributes.caption,
+      width: mediaData.attributes.width,
+      height: mediaData.attributes.height,
+      mime: mediaData.attributes.mime,
+    };
+  }
+
+  /**
+   * Fetch live statistics for a product
+   */
+  async getLiveStats(productId: string): Promise<StatDataAttributes[]> {
+    try {
+      // First try custom endpoint if available
+      const response = await this.request<any>(
+        `/api/stats/live/${productId}`
+      ).catch(() => null);
+
+      if (response) {
+        return response;
+      }
+
+      // Fallback to querying stat-data collection
+      const fallbackResponse = await this.request<StrapiResponse<any[]>>(
+        `/api/stat-datas?filters[productId][$eq]=${productId}&sort=timestamp:desc&pagination[limit]=10`
+      );
+
+      return fallbackResponse.data.map((item: any) => item.attributes);
+    } catch (error) {
+      console.error(`Failed to fetch stats for ${productId}:`, error);
+      return [];
+    }
+  }
+
+  /**
+   * Subscribe to real-time updates (if product has realtime config)
+   */
+  async subscribeToUpdates(
+    productId: string,
+    callback: (stats: StatDataAttributes[]) => void
+  ): Promise<() => void> {
+    const product = await this.getProduct(productId);
+
+    if (!product?.realtimeConfig?.enabled) {
+      console.warn(`Product ${productId} does not have realtime enabled`);
+      return () => {};
+    }
+
+    const interval = product.realtimeConfig.refreshInterval || 30000;
+
+    // Initial fetch
+    const stats = await this.getLiveStats(productId);
+    callback(stats);
+
+    // Set up polling
+    const intervalId = setInterval(async () => {
+      const stats = await this.getLiveStats(productId);
+      callback(stats);
+    }, interval);
+
+    // Return cleanup function
+    return () => clearInterval(intervalId);
+  }
+
+  /**
+   * Clear cache
+   */
+  clearCache(productId?: string) {
+    if (productId) {
+      const keys = Array.from(this.cache.keys()).filter(key => 
+        key.includes(productId)
+      );
+      keys.forEach(key => this.cache.delete(key));
+    } else {
+      this.cache.clear();
+    }
+  }
+
+  /**
+   * Health check - verify Strapi is accessible
+   */
+  async healthCheck(): Promise<boolean> {
+    try {
+      await this.request<any>('/api/products?pagination[limit]=1');
+      return true;
+    } catch (error) {
+      console.error('Strapi health check failed:', error);
+      return false;
+    }
+  }
+}
+
+// Export singleton instance
+export const strapiService = new StrapiService();
+
+// Export types
+export type {
+  ProductAttributes,
+  ContentSection,
+  RealtimeConfig,
+  StatDataAttributes,
+};

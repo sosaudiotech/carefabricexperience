@@ -65,6 +65,85 @@ class StrapiService {
   }
 
   /**
+   * Convert Strapi blocks format to plain text
+   */
+  private blocksToText(blocks: any): string {
+    if (!blocks) return '';
+    if (typeof blocks === 'string') return blocks;
+    if (!Array.isArray(blocks)) return '';
+
+    return blocks.map(block => {
+      if (block.children) {
+        return block.children.map((child: any) => child.text || '').join('');
+      }
+      return '';
+    }).join('\n');
+  }
+
+  /**
+   * Process content sections from Strapi response
+   */
+  private processSections(sectionsData: any[]): ContentSection[] {
+    if (!sectionsData || sectionsData.length === 0) return [];
+
+    return sectionsData.map((item: any) => {
+      const section: ContentSection = {
+        id: item.id,
+        sectionType: item.sectionType,
+        title: item.title,
+        order: item.order || 0,
+      };
+
+      // Initialize content object
+      section.content = {};
+
+      // Process content field based on section type
+      if (item.content) {
+        if (item.sectionType === 'text') {
+          // For text sections, convert blocks to plain text
+          section.content.text = this.blocksToText(item.content);
+        } else if (item.sectionType === 'video') {
+          // For video sections, process the text content as description
+          section.content.description = this.blocksToText(item.content);
+        }
+      }
+
+      // Process items field (JSON data for features, stats, etc.)
+      if (item.items) {
+        // Convert items object to array if needed
+        let itemsArray: any[];
+        if (Array.isArray(item.items)) {
+          itemsArray = item.items;
+        } else if (typeof item.items === 'object') {
+          // Convert object with numeric keys to array
+          itemsArray = Object.values(item.items);
+        } else {
+          itemsArray = [];
+        }
+
+        // Store items in the appropriate field based on section type
+        if (item.sectionType === 'features') {
+          section.content.items = itemsArray;
+        } else if (item.sectionType === 'stats') {
+          section.content.metrics = itemsArray;
+        } else {
+          section.content.items = itemsArray;
+        }
+      }
+
+      // Process media
+      if (item.media?.data) {
+        const mediaArray = Array.isArray(item.media.data) ? item.media.data : [item.media.data];
+        section.media = mediaArray
+          .map((m: any) => this.transformMediaUrl(m))
+          .filter((m: any) => m !== null);
+      }
+
+      return section;
+    });
+  }
+
+  /**
    * Make authenticated request to Strapi
    */
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
@@ -117,10 +196,29 @@ class StrapiService {
     }
 
     const response = await this.request<StrapiResponse<any[]>>(
-      '/api/products?populate=*&filters[active][$eq]=true&sort=sortOrder:asc'
+      '/api/products?populate=*&filters[active][$eq]=true&sort=displayOrder:asc'
     );
 
-    const products = response.data.map((item: any) => item.attributes);
+    // In Strapi v5, data is flat (no attributes wrapper)
+    const products = response.data.map((item: any) => {
+      return {
+        productId: item.productId,
+        title: item.title,
+        tagline: item.tagline,
+        description: this.blocksToText(item.description),
+        color: item.color || '#2563eb',
+        subcategory: item.subcategory,
+        template: item.template || 'standard',
+        active: item.active !== false,
+        sortOrder: item.displayOrder || 0,
+        createdAt: item.createdAt,
+        updatedAt: item.updatedAt,
+        heroMedia: item.heroVideo?.data ? this.transformMediaUrl(item.heroVideo.data) : undefined,
+        gallery: item.gallery?.data ? item.gallery.data.map((media: any) => this.transformMediaUrl(media)) : undefined,
+        sections: this.processSections(item.content_sections || []),
+        realtimeConfig: undefined,
+      };
+    });
 
     this.cache.set(cacheKey, { data: products, timestamp: Date.now() });
     return products;
@@ -137,25 +235,46 @@ class StrapiService {
     }
 
     try {
+      // Use simple populate=* query that works with Strapi v5
       const response = await this.request<StrapiResponse<any[]>>(
-        `/api/products?filters[productId][$eq]=${productId}&populate[sections][populate]=*&populate[heroMedia]=*&populate[gallery]=*&populate[realtimeConfig]=*`
+        `/api/products?filters[productId][$eq]=${productId}&populate=*`
       );
 
       if (response.data.length === 0) {
         return null;
       }
 
-      const product = response.data[0].attributes;
+      // In Strapi v5, data is flat (no attributes wrapper)
+      const data = response.data[0];
 
-      // Transform media URLs to absolute paths
-      if (product.heroMedia?.data) {
-        product.heroMedia = this.transformMediaUrl(product.heroMedia.data);
-      }
-      if (product.gallery?.data) {
-        product.gallery = product.gallery.data.map((item: any) => 
-          this.transformMediaUrl(item)
-        );
-      }
+      console.log('Raw product data from Strapi:', data);
+      console.log('Content sections data:', data.content_sections);
+
+      // Map Strapi v5 field names to our interface
+      const product: ProductAttributes = {
+        productId: data.productId,
+        title: data.title,
+        tagline: data.tagline,
+        description: this.blocksToText(data.description),
+        color: data.color || '#2563eb',
+        subcategory: data.subcategory,
+        template: data.template || 'standard',
+        active: data.active !== false,
+        sortOrder: data.displayOrder || 0,
+        createdAt: data.createdAt,
+        updatedAt: data.updatedAt,
+        // Map heroVideo to heroMedia
+        heroMedia: data.heroVideo?.data ? this.transformMediaUrl(data.heroVideo.data) : undefined,
+        // Handle gallery if present
+        gallery: data.gallery?.data ? data.gallery.data.map((item: any) => this.transformMediaUrl(item)) : undefined,
+        // Process content_sections - handle both v5 format and possible nested data
+        sections: this.processSections(data.content_sections || []),
+        // No realtimeConfig in current schema
+        realtimeConfig: undefined,
+      };
+
+      console.log('Processed product with sections:', product);
+      console.log('Number of sections:', product.sections?.length);
 
       this.cache.set(cacheKey, { data: product, timestamp: Date.now() });
       return product;
@@ -169,16 +288,16 @@ class StrapiService {
    * Transform media URL to absolute path
    */
   private transformMediaUrl(mediaData: any) {
-    if (!mediaData?.attributes?.url) return null;
+    if (!mediaData?.url) return null;
 
-    const url = mediaData.attributes.url;
+    const url = mediaData.url;
     return {
       url: url.startsWith('http') ? url : `${this.baseUrl}${url}`,
-      alternativeText: mediaData.attributes.alternativeText,
-      caption: mediaData.attributes.caption,
-      width: mediaData.attributes.width,
-      height: mediaData.attributes.height,
-      mime: mediaData.attributes.mime,
+      alternativeText: mediaData.alternativeText,
+      caption: mediaData.caption,
+      width: mediaData.width,
+      height: mediaData.height,
+      mime: mediaData.mime,
     };
   }
 
@@ -201,7 +320,8 @@ class StrapiService {
         `/api/stat-datas?filters[productId][$eq]=${productId}&sort=timestamp:desc&pagination[limit]=10`
       );
 
-      return fallbackResponse.data.map((item: any) => item.attributes);
+      // In Strapi v5, data is flat
+      return fallbackResponse.data;
     } catch (error) {
       console.error(`Failed to fetch stats for ${productId}:`, error);
       return [];
@@ -257,7 +377,7 @@ class StrapiService {
    */
   async healthCheck(): Promise<boolean> {
     try {
-      await this.request<any>('/api');
+      await this.request<any>('/api/products?pagination[limit]=1');
       return true;
     } catch (error) {
       console.error('Strapi health check failed:', error);

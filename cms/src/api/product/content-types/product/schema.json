@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": "Product information"
   },
   "options": {
     "draftAndPublish": true
@@ -37,8 +38,10 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": [
+        "images",
         "files",
-        "videos"
+        "videos",
+        "audios"
       ]
     },
     "displayOrder": {
@@ -49,6 +52,27 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::content-section.content-section"
+    },
+    "productId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     }
   }
 }

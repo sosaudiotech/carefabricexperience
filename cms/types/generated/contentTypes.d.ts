@@ -434,6 +434,7 @@ export interface ApiContentSectionContentSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'content_sections';
   info: {
+    description: 'Reusable content sections for products';
     displayName: 'ContentSection';
     pluralName: 'content-sections';
     singularName: 'content-section';
@@ -442,7 +443,8 @@ export interface ApiContentSectionContentSection
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.String;
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -460,8 +462,9 @@ export interface ApiContentSectionContentSection
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     sectionType: Schema.Attribute.Enumeration<
-      ['features', 'stats', 'video', 'gallery', 'testimonial', 'comparison']
-    >;
+      ['features', 'stats', 'video', 'gallery', 'text', 'custom']
+    > &
+      Schema.Attribute.Required;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -472,6 +475,7 @@ export interface ApiContentSectionContentSection
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
+    description: 'Product information';
     displayName: 'Product';
     pluralName: 'products';
     singularName: 'product';
@@ -480,6 +484,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     color: Schema.Attribute.String & Schema.Attribute.DefaultTo<'blue'>;
     content_sections: Schema.Attribute.Relation<
       'oneToMany',
@@ -490,14 +495,19 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
     displayOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    heroVideo: Schema.Attribute.Media<'files' | 'videos'>;
+    gallery: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    heroVideo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product.product'
     > &
       Schema.Attribute.Private;
+    productId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
+    subcategory: Schema.Attribute.String;
     tagline: Schema.Attribute.String;
     template: Schema.Attribute.Enumeration<
       ['minimal', 'feature-rich', 'video-hero', 'stats-focused']

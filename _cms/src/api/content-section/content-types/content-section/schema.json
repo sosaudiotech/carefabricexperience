@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content_sections",
+  "info": {
+    "singularName": "content-section",
+    "pluralName": "content-sections",
+    "displayName": "ContentSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionType": {
+      "type": "enumeration",
+      "enum": [
+        "features",
+        "stats",
+        "video",
+        "gallery",
+        "testimonial",
+        "comparison"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "items": {
+      "type": "json"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

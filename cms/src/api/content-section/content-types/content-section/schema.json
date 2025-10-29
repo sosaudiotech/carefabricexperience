@@ -4,7 +4,8 @@
   "info": {
     "singularName": "content-section",
     "pluralName": "content-sections",
-    "displayName": "ContentSection"
+    "displayName": "ContentSection",
+    "description": "Reusable content sections for products"
   },
   "options": {
     "draftAndPublish": true
@@ -18,15 +19,16 @@
         "stats",
         "video",
         "gallery",
-        "testimonial",
-        "comparison"
-      ]
+        "text",
+        "custom"
+      ],
+      "required": true
     },
     "title": {
       "type": "string"
     },
     "content": {
-      "type": "string"
+      "type": "blocks"
     },
     "items": {
       "type": "json"
@@ -44,6 +46,10 @@
         "videos",
         "audios"
       ]
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

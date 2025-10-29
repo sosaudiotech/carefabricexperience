@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Product information with category relation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "color": {
+      "type": "string",
+      "default": "blue"
+    },
+    "template": {
+      "type": "enumeration",
+      "enum": [
+        "minimal",
+        "feature-rich",
+        "video-hero",
+        "stats-focused"
+      ]
+    },
+    "heroVideo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    },
+    "content_sections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content-section.content-section"
+    },
+    "productId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

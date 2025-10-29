@@ -4,8 +4,12 @@
     "\\cms",
     "\\cms\\config",
     "\\src",
-    "\\src\\components"
+    "\\src\\components",
+    "\\_cms",
+    "\\_cms\\src",
+    "\\_cms\\types",
+    "\\_cms\\types\\generated"
   ],
-  "SelectedNode": "\\src\\components\\Display.tsx",
+  "SelectedNode": "\\_cms\\types\\generated\\contentTypes.d.ts",
   "PreviewInSolutionExplorer": false
 }
